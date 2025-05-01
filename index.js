@@ -30,17 +30,23 @@ thirsuser.diposite(100)
 thirsuser.diposite(400)
 
 //2
-const listOfTask={
+//creat an object taskList
+//creat method addtask
+//creat method complete task
+//creat listTask method to print remaining task
+
+
+const taskList={
     tasks:[],
     addTask:function(task){
         this.tasks.push(task)
         console.log(`added task${task}`)
     },
-    finishedTask:function(task){
+    completeTask:function(task){
         const index=this.tasks.indexOf(task)
         if(index !==-1){
              this.tasks.splice(index,1);
-             console.log(`finished task ${task}`)}
+             console.log(`complete task ${task}`)}
              else{
                 console.log(`${task} unknown`)
              
@@ -57,18 +63,17 @@ const listOfTask={
         }
 
     }
-    listOfTask.addTask("doing js assignment")
-    listOfTask.addTask("reading python")
-    listOfTask.addTask("cleaning room")
-    listOfTask.addTask("replay email")
+    taskList.addTask("doing js assignment")
+    taskList.addTask("reading python")
+    taskList.addTask("cleaning room")
+    taskList.addTask("replay email")
 
-    listOfTask.finishedTask()
-    listOfTask.finishedTask("reading python")
-    listOfTask.finishedTask("claning room")
-    listOfTask.finishedTask()
-
-    listOfTask.listTasks([])
-    listOfTask.listTasks("reading python")
+    taskList.completeTask()
+    taskList.completeTask("reading python")
+    taskList.completeTask("claning room")
+    taskList.completeTask()
+    taskList.listTasks([])
+    taskList.listTasks("reading python")
 
 
     //3
@@ -89,7 +94,13 @@ console.log((getAvarage(scors)));
 // const firststudent=new Student("Tihitna",[80,79,45])
 //     const secondstudent=new Student("Beki"[56,89,89])
 
- //4
+ //4 creat class to define shoping cart
+ //constractor intialize an empty array to hold item in the shopping cart
+ //creat method to add item
+ //creat method to calculate the total cost of item
+ //creat shoping cart object
+ //add item
+ //console.log getTotal method on the cart object then print
 class ShoppingCart {
 
     constructor() {
@@ -123,7 +134,9 @@ cart.addItem({ name: "Shoes", price: 75});
 
 console.log("Total:", cart.getTotal()); 
 //5
-
+//creat constractor function for the next object
+//creat isClass method returns true if year is <2000 else false
+//creat recommend method returns  recomendation if the rate is >8 else console.log another opption
 function Movie(title, year, rating) {
         this.title = title;
         this.year = year;
@@ -140,9 +153,9 @@ function Movie(title, year, rating) {
             }
         };
     }
-    const movie1 = new Movie("The Godfather",1972, 9.2);
-    const movie2 = new Movie("Broken", 2002, 9);
-    const movie3 = new Movie("The Intouchables", 1997, 7.5);
-    console.log(`"${movie1.title}" is classic movie: ${movie1.isClassic()}`);
-    console.log(`Recommendation: ${movie1.recommend()}`);
+    const firstmovie = new Movie("Prison Break",2023, 9.2);
+    const secondmovie = new Movie("Titanic", 2002, 9);
+    const thirdmovie= new Movie("Money Highest", 1997, 7);
+    console.log(`"${firstmovie.title}" is classic movie: ${firstmovie.isClassic()}`);
+    console.log(`Recommendation: ${firstmovie.recommend()}`);
 
